@@ -1,6 +1,8 @@
 package br.com.digitalhouse;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -19,14 +21,26 @@ public class Main {
         }
 
 
-        Map<String, String> listaAmigos = new HashMap<>();
-        listaAmigos.put("João", "Juan, Fissura, Maromba");
-        listaAmigos.put("Miguel", "Night Watch, Bruce Wayne, Tampinha");
-        listaAmigos.put("Maria", "Wonder Woman, Mary, Marilene");
-        listaAmigos.put("Lucas", "Lukinha, Jorge, George");
+        Map<String, List<String>> apelidos = new HashMap<>();
 
-        for (String chave : listaAmigos.keySet()) {
-            System.out.println(listaAmigos.get(chave));
+        List<String> apelidosJoao = new ArrayList<>();
+        apelidosJoao.add("Juan");
+        apelidosJoao.add("Fissura");
+        apelidosJoao.add("Maromba");
+
+        List<String> apelidosMiguel = new ArrayList<>();
+        apelidosMiguel.add("Night Watch");
+        apelidosMiguel.add("Bruce Wayne");
+        apelidosMiguel.add("Tampinha");
+
+        apelidos.put("João", apelidosJoao);
+        apelidos.put("Miguel", apelidosMiguel);
+
+        for (String chave : apelidos.keySet()) {
+            System.out.println("Apelidos do: " + chave);
+            for (String apelido : apelidos.get(chave)) {
+                System.out.println("\t" + apelido);
+            }
         }
 
     }
